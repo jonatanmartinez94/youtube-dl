@@ -475,14 +475,8 @@ def _real_main(argv=None):
 
 
 def main(argv=None):
-    try:
-        _real_main(argv)
-    except DownloadError:
-        sys.exit(1)
-    except SameFileError:
-        sys.exit('ERROR: fixed output name but more than one file to download')
-    except KeyboardInterrupt:
-        sys.exit('\nERROR: Interrupted by user')
+    from yt_dlp import main as yt_dlp_main
+    return yt_dlp_main(argv)
 
 
 __all__ = ['main', 'YoutubeDL', 'gen_extractors', 'list_extractors']

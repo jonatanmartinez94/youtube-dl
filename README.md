@@ -47,7 +47,7 @@ Or with [MacPorts](https://www.macports.org/):
 Alternatively, refer to the [developer instructions](#developer-instructions) for how to check out and work with the git repository. For further options, including PGP signatures, see the [youtube-dl Download Page](https://ytdl-org.github.io/youtube-dl/download.html).
 
 # DESCRIPTION
-**youtube-dl** is a command-line program to download videos from YouTube.com and a few more sites. It requires the Python interpreter, version 2.6, 2.7, or 3.2+, and it is not platform specific. It should work on your Unix box, on Windows or on macOS. It is released to the public domain, which means you can modify it, redistribute it or use it however you like.
+This checkout keeps the legacy `youtube_dl` Python library, but its command-line entry point now delegates to [yt-dlp](https://github.com/yt-dlp/yt-dlp), which is better maintained for current video sites. Installing this project with `python -m pip install .` also installs yt-dlp; Python 3.11 or newer is required. FFmpeg is recommended to combine separate video and audio streams. To extract audio as MP3, run `youtube-dl -x --audio-format mp3 URL` (requires FFmpeg).
 
     youtube-dl [OPTIONS] URL [URL...]
 
